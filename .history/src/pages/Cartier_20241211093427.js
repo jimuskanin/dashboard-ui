@@ -1,0 +1,37 @@
+import React from 'react';
+import {
+    useRef,
+    useEffect
+} from "react";
+
+import "../assets/styles/cartier.css";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+function Cartier() {
+    const leftCurtainRef = useRef(null);
+    const rightCurtainRef = useRef(null);
+    const contentRef = useRef(null);
+
+    useEffect(() => {
+        // ANIMATION SETUP 
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: contentRef.current,
+                start: "top center", // ADJUST SCROLL POSITION
+                end: "bottom center",
+                scrub: 1, // SMOOTH SCROLL ANIMATION
+                markers: true, // DEBUGGING
+            }
+        })
+    })
+
+    return (
+        <div>
+            CARTIER
+        </div>
+    );
+}
+
+export default Cartier;
